@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://s8acl7xixmqh"]
+
+[ext_resource type="Script" path="res://Script/CharacterBody2D.gd" id="1_ypvxu"]
+[ext_resource type="Texture2D" uid="uid://c2q06x20ytes" path="res://Art/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Red/Warrior_Red.png" id="2_3gmgl"]
+[ext_resource type="Script" path="res://Script/Marker2D.gd" id="3_d30yo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ittih"]
+atlas = ExtResource("2_3gmgl")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a304"]
+atlas = ExtResource("2_3gmgl")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fmkc"]
+atlas = ExtResource("2_3gmgl")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n634o"]
+atlas = ExtResource("2_3gmgl")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncein"]
+atlas = ExtResource("2_3gmgl")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4e1kl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ittih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a304")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fmkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n634o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncein")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_58uvb"]
+radius = 18.2483
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_ypvxu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(10, 0)
+sprite_frames = SubResource("SpriteFrames_4e1kl")
+frame = 3
+frame_progress = 0.744676
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11, 11)
+shape = SubResource("CircleShape2D_58uvb")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(10, 0)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(12, 10)
+script = ExtResource("3_d30yo")

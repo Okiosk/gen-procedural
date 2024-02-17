@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://bjk2q7krbyvli"]
+
+[ext_resource type="Texture2D" uid="uid://eergu55pqvfl" path="res://Art/Tiny Swords (Update 010)/Factions/Goblins/Troops/Torch/Blue/Torch_Blue.png" id="1_4e7mw"]
+[ext_resource type="Script" path="res://Script/mob_1.gd" id="1_j4pim"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbweu"]
+atlas = ExtResource("1_4e7mw")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n4p5"]
+atlas = ExtResource("1_4e7mw")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj0f4"]
+atlas = ExtResource("1_4e7mw")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujacn"]
+atlas = ExtResource("1_4e7mw")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f751w"]
+atlas = ExtResource("1_4e7mw")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sg36"]
+atlas = ExtResource("1_4e7mw")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mdjyn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbweu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0n4p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj0f4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujacn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f751w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sg36")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n35so"]
+radius = 20.0998
+
+[node name="Mob_1" type="RigidBody2D"]
+freeze = true
+script = ExtResource("1_j4pim")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mdjyn")
+frame_progress = 0.423962
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_n35so")
+metadata/_edit_lock_ = true
